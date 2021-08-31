@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
 const query = graphql`
 {
-  file(relativePath: {eq: "hero-image.png"}) {
+  file(relativePath: {eq: "hero-image1.png"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid
