@@ -8,20 +8,23 @@ import Seo from "../components/seo"
 import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
+import Blogs from "../components/Blogs"
 
 const IndexPage = ({ data }) => {
   const {
     allStrapiProjects: { nodes: projects },
+    allStrapiBlogs: { nodes: blogs },
   } = data
   return (
     <>
       <Seo title="Home" />
-      <main>
+      <Layout>
         <Hero />
         <Services />
         <Jobs />
         <Projects title="featured projects" showLink projects={projects} />
-      </main>
+        <Blogs blogs={blogs} title="latest articles" showLink />
+      </Layout>
     </>
   )
 }
@@ -47,6 +50,22 @@ export const query = graphql`
         }
       }
       totalCount
+    }
+    allStrapiBlogs(limit: 3, sort: { fields: date, order: DESC }) {
+      nodes {
+        content
+        slug
+        date(formatString: "MMMM Do, YYYY")
+        desc
+        category
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
   }
 `
