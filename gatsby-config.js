@@ -2,8 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `sagara webdev portfolio`,
     description: `this is my personal web dev portfolio`,
-    author: `@gatsbyjs`,
+    author: `sagara@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    twitterUsername: "@sagara",
+    image: "/twitter-img.png",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

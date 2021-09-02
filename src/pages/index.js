@@ -9,7 +9,7 @@ import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
-
+import SEO from "../components/SEO"
 const IndexPage = ({ data }) => {
   const {
     allStrapiProjects: { nodes: projects },
@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
   } = data
   return (
     <>
-      <Seo title="Home" />
+      <SEO title="Home" description="this is our home page" />
       <Layout>
         <Hero />
         <Services />
