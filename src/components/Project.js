@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 import { Link } from "gatsby"
@@ -42,6 +43,15 @@ const Project = ({
       </div>
     </article>
   )
+}
+
+Project.propTypes = {
+  title: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  stack: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Project
