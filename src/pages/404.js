@@ -1,9 +1,9 @@
 import * as React from "react"
-
-import Layout from "../components/layout"
+import { Link } from "gatsby"
+import Layout from "../components/layout2"
 import Seo from "../components/seo"
 
-const NotFoundPage = () => (
+const Error = () => (
   <Layout>
     <main className="error-page">
       <div className="error-container">
@@ -16,4 +16,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default NotFoundPage
+export default Error
